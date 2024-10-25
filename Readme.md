@@ -1,3 +1,5 @@
+# Exercícios para praticar o uso de traits em Rust
+
 ### 1. Implementando uma *trait* simples
 Crie uma *trait* chamada `Descrevivel` com um método `descricao` que retorna uma string. Em seguida, implemente essa *trait* para uma struct chamada `Carro`, onde a descrição deve incluir a marca e o modelo do carro.
 
