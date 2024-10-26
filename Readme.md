@@ -48,3 +48,27 @@ Crie uma *trait* chamada `Ordenavel` com um método `ordenar`. Implemente essa *
 ### 10. Conversão entre tipos com *trait bounds*
 Crie uma *trait* chamada `Convertivel` com um método `converter` que converte um tipo em outro. Implemente essa *trait* para converter entre as structs `Celsius` e `Fahrenheit`. Depois, crie uma função genérica `converter_temperatura` que aceita um valor que implementa `Convertivel` e retorna a temperatura convertida.
 
+---
+
+### 11. Descrição e Identificação de Produtos
+Crie uma *trait* `Descrevivel` com um método `descricao` que retorna uma `String`. Em seguida, crie outra *trait* `Identificavel` que herda de `Descrevivel` e define um método `identificar`, que utiliza o método `descricao` para exibir a identificação do objeto. Implemente essas *traits* para uma struct `Produto` com os campos `nome` e `preco`. Teste o código exibindo a descrição e a identificação do produto.
+
+---
+
+### 12. Exibição e Comparação de Carros
+Crie uma *trait* `Exibivel` com um método `exibir`. Em seguida, crie uma *trait* `Comparavel` que herda de `Exibivel` e define um método `comparar` que recebe uma referência para outro objeto e retorna `true` se os objetos forem iguais e `false` caso contrário. Implemente essas *traits* para uma struct `Carro` com os campos `marca` e `velocidade`. Crie uma função que utilize `Comparavel` para exibir e comparar dois carros.
+
+---
+
+### 13. Cálculo e Exibição de Área de Formas
+Crie uma *trait* `CalculoArea` com um método `area` que retorna um `f64` e uma *trait* `FormaExibivel` que herda de `CalculoArea` e define um método `exibir_area` para exibir a área da forma. Implemente essas *traits* para as structs `Quadrado` e `Circulo`. Para `Circulo`, considere o valor de PI como 3.14. Crie uma função que recebe uma forma e exibe sua área usando `FormaExibivel`.
+
+---
+
+### 14. Comparação de Nomes de Pessoas
+Crie uma *trait* `Nomeavel` com um método `nome` que retorna uma `String` e uma *trait* `ComparavelPorNome` que herda de `Nomeavel`. Na *trait* `ComparavelPorNome`, defina um método `comparar_nomes` que recebe outro objeto e imprime se os nomes são iguais ou diferentes. Implemente essas *traits* para uma struct `Pessoa` com o campo `nome`. Crie uma função que recebe duas `Pessoa` e compara seus nomes.
+
+---
+
+### 15. Movimento Descritivo de Veículos
+Crie uma *trait* `Movimento` com um método `mover` e uma *trait* `MovimentoDescritivo` que herda de `Movimento`. Em `MovimentoDescritivo`, defina um método `mover_com_descricao` que chama `mover` e exibe uma mensagem descritiva. Implemente essas *traits* para as structs `Carro` e `Aviao`. Para cada struct, o método `mover` deve imprimir uma mensagem sobre o movimento específico do veículo, e `mover_com_descricao` deve incluir uma descrição adicional.
