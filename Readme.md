@@ -72,3 +72,71 @@ Crie uma *trait* `Nomeavel` com um método `nome` que retorna uma `String` e uma
 
 ### 15. Movimento Descritivo de Veículos
 Crie uma *trait* `Movimento` com um método `mover` e uma *trait* `MovimentoDescritivo` que herda de `Movimento`. Em `MovimentoDescritivo`, defina um método `mover_com_descricao` que chama `mover` e exibe uma mensagem descritiva. Implemente essas *traits* para as structs `Carro` e `Aviao`. Para cada struct, o método `mover` deve imprimir uma mensagem sobre o movimento específico do veículo, e `mover_com_descricao` deve incluir uma descrição adicional. Crie uma função que recebe um veiculo e chama o metodo `mover_com_descricao`.
+
+---
+
+### 16. Coleção de Formas Geométricas
+
+Crie uma *trait* chamada `Forma`, com o método `area`, que retorna a área de uma forma geométrica como `f64`. Depois:
+
+1. Implemente a *trait* `Forma` para duas structs: `Circulo` (com raio `r`) e `Retangulo` (com largura e altura).
+2. No `main`, crie um vetor de *trait objects* `Vec<Box<dyn Forma>>` para armazenar diferentes instâncias de `Circulo` e `Retangulo`.
+3. Crie uma função `mostrar_areas`, que recebe esse vetor e imprime a área de cada forma.
+
+Esse exercício ajuda a entender como *trait objects* permitem lidar com diferentes tipos que implementam uma mesma *trait*.
+
+---
+
+### 17. Sistema de Pagamento
+
+Crie uma *trait* chamada `Pagamento`, com o método `processar`, que não retorna nada. Depois:
+
+1. Implemente a *trait* para duas structs: `CartaoCredito` e `Boleto`.
+   - Em `CartaoCredito`, `processar` deve imprimir algo como: `"Processando pagamento por cartão de crédito."`
+   - Em `Boleto`, deve imprimir algo como: `"Processando pagamento por boleto bancário."`
+2. No `main`, crie uma lista `Vec<Box<dyn Pagamento>>` contendo uma instância de cada método de pagamento.
+3. Passe a lista para uma função `executar_pagamentos`, que chama `processar` para cada item da lista.
+
+Com esse exercício, você verá como *trait objects* possibilitam armazenar e manipular diferentes implementações da mesma interface.
+
+---
+
+### 18. Monitoramento de Sensores
+
+Defina uma *trait* chamada `Sensor`, com um método `ler_dado` que retorna uma `String` com o dado do sensor. Em seguida:
+
+1. Crie duas structs, `SensorTemperatura` e `SensorUmidade`, cada uma implementando a *trait* `Sensor`.
+   - Em `SensorTemperatura`, `ler_dado` retorna algo como `"Temperatura: 24°C"`.
+   - Em `SensorUmidade`, `ler_dado` retorna algo como `"Umidade: 55%"`.
+2. No `main`, crie um vetor `Vec<Box<dyn Sensor>>` que armazene instâncias de cada tipo de sensor.
+3. Escreva uma função `coletar_dados` que recebe esse vetor e imprime o valor lido de cada sensor.
+
+Esse exercício mostra como *trait objects* permitem abstrair diferentes tipos de sensores sob uma única interface.
+
+---
+
+### 19. Registro de Animais no Zoológico
+
+Crie uma *trait* `Animal` com dois métodos: `nome` (retorna uma `String` com o nome do animal) e `emitir_som` (imprime um som característico do animal). Depois:
+
+1. Implemente `Animal` para duas structs: `Leao` e `Macaco`.
+   - `Leao` deve imprimir `"Rugido!"` em `emitir_som`.
+   - `Macaco` deve imprimir `"Grito!"`.
+2. No `main`, crie uma lista `Vec<Box<dyn Animal>>` para armazenar instâncias de `Leao` e `Macaco`.
+3. Crie uma função `mostrar_animais` que recebe a lista e, para cada animal, imprime seu nome e chama `emitir_som`.
+
+Este exercício explora como *trait objects* ajudam a criar coleções heterogêneas de objetos.
+
+---
+
+### 20. Sistema de Notificações
+
+Implemente uma *trait* `Notificacao`, que tem um método `enviar`, o qual imprime uma mensagem de notificação. Em seguida:
+
+1. Crie duas structs: `Email` e `SMS`.
+   - Em `Email`, `enviar` deve imprimir `"Enviando e-mail de notificação."`.
+   - Em `SMS`, deve imprimir `"Enviando SMS de notificação."`
+2. No `main`, crie um vetor `Vec<Box<dyn Notificacao>>` contendo uma instância de `Email` e uma de `SMS`.
+3. Crie uma função `enviar_notificacoes` que recebe essa lista e chama `enviar` para cada notificação.
+
+Esse exercício ensina como *trait objects* tornam fácil o envio de notificações por diferentes canais em um sistema.
