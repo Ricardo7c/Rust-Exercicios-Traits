@@ -23,7 +23,6 @@ fn executar_pagamentos(pagamentos: Vec<&dyn Pagamento>){
     }
 }
 
-
 fn main(){
     let cartao = CartaoCredito{};
     let boleto = Boleto{};
