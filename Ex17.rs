@@ -17,15 +17,15 @@ impl Pagamento for Boleto {
     }
 }
 
-fn executar_pagamentos(pagamentos: Vec<&dyn Pagamento>){
+fn executar_pagamentos(pagamentos: Vec<Box<dyn Pagamento>>){
     for pagamento in pagamentos{
         pagamento.processar();
     }
 }
 
 fn main(){
-    let cartao = CartaoCredito{};
-    let boleto = Boleto{};
-    let pagamentos: Vec<&dyn Pagamento> = vec![&cartao, &boleto];
+    let cartao = Box::new(CartaoCredito{});
+    let boleto = Box::new(Boleto{});
+    let pagamentos: Vec<Box<dyn Pagamento>> = vec![cartao, boleto];
     executar_pagamentos(pagamentos);
 }

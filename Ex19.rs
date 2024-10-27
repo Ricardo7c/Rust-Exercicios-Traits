@@ -27,21 +27,21 @@ impl Animal for Macaco {
     }
 }
 
-fn mostrar_animais(animais: Vec<&dyn Animal>){
+fn mostrar_animais(animais: Vec<Box<dyn Animal>>){
     for animal in animais{
         println!("Nome: {} - Som: {}", animal.nome(), animal.emitir_som())
     }
 }
 
 fn main(){
-    let a1 = Macaco{
+    let a1 = Box::new(Macaco{
         nome: "Cesar"
-    };
-    let a2 = Leao{
+    });
+    let a2 = Box::new(Leao{
         nome: "Simba"
-    };
+    });
 
-    let animais:Vec<&dyn Animal> = vec![&a1, &a2];
+    let animais:Vec<Box<dyn Animal>> = vec![a1, a2];
 
     mostrar_animais(animais);
 }

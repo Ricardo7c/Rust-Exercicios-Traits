@@ -25,7 +25,7 @@ impl Forma for Retangulo {
     }
 }
 
-fn mostrar_areas(formas: Vec<&dyn Forma>){
+fn mostrar_areas(formas: Vec<Box<dyn Forma>>){
     for forma in formas{
         println!("{:.2}", forma.area());
     }
@@ -33,25 +33,25 @@ fn mostrar_areas(formas: Vec<&dyn Forma>){
 
 
 fn main(){
-    let c1 = Circulo{
+    let c1 = Box::new(Circulo{
         raio: 3.56
-    };
+    });
 
-    let r1 = Retangulo{
+    let r1 = Box::new(Retangulo{
         largura: 3.2,
         altura: 2.0
-    };
+    });
 
-    let c2 = Circulo{
+    let c2 = Box::new(Circulo{
         raio: 2.1
-    };
+    });
 
-    let r2 = Retangulo{
+    let r2 = Box::new(Retangulo{
         largura: 5.0,
         altura: 4.0
-    };
+    });
 
-    let formas: Vec<&dyn Forma> = vec![&c1, &r1, &c2, &r2];
+    let formas: Vec<Box<dyn Forma>> = vec![c1, r1, c2, r2];
 
     mostrar_areas(formas);
 }
